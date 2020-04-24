@@ -1,4 +1,4 @@
-<?php
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'TopicController@index')->name('topics.index');
-Route::resource('topics','TopicController');//->except(['index']);
+Route::resource('topics', 'TopicController');//->except(['index']);
 
 //Route::get('/vue1', function () {
 //  return view('view1');
@@ -24,7 +24,7 @@ Route::resource('topics','TopicController');//->except(['index']);
 
 Auth::routes();
 
-Route::get('/home','HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 /*Auth::routes();
 
@@ -34,7 +34,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/comments/{topic}', 'CommentController@store')->name('comments.store');
-Route::post('/commentReply/{comment}','CommentController@storeCommentReply')->name('comments.storeReply');
+Route::post('/commentReply/{comment}', 'CommentController@storeCommentReply')->name('comments.storeReply');
 
 Auth::routes();
 
